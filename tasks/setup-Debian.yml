@@ -1,0 +1,5 @@
+---
+- name: Debian | Ensure Pip is installed.
+  apt:
+    name: python-pip
+    update_cache: 'yes'

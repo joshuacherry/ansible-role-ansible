@@ -1,0 +1,11 @@
+---
+- name: RedHat | Enable EPEL
+  yum:
+    name: "epel-release"
+    state: present
+    enablerepo: "extras"
+
+- name: RedHat | Ensure Pip is installed.
+  yum:
+    name: python-pip
+    state: present

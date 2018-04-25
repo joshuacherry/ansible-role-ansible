@@ -1,0 +1,17 @@
+---
+- include_tasks: setup-RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+- include_tasks: setup-Debian.yml
+  when: ansible_os_family == 'Debian'
+
+- name: Upgrade pip
+  pip:
+    name: pip
+    extra_args: --upgrade
+
+- name: Install Ansible
+  pip:
+    name: ansible
+    version: "{{ ansible_pip_version }}"
+    extra_args: --upgrade
